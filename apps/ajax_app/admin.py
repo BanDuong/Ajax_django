@@ -8,3 +8,4 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ('id', 'name', 'user',)
     list_display = ('id', 'user', 'name', 'description', 'quantity', 'image', 'created_at', 'updated_at',)
     search_fields = ('id', 'name', 'user',)
+    list_per_page = 10
