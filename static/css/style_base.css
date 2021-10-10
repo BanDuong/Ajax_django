@@ -1,3 +1,13 @@
-li{
-    color: red;
+body{
+    background-color: #d8dec9;
+}
+.div_header,.div_main{
+    margin: 0 250px;
+    text-align: center;
+    font-size: 20px;
+    color: crimson;
+    background-color: aquamarine;
+}
+.div_main{
+    background-color: #eedb8d;
 }
