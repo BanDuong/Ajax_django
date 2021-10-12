@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_base.css' %}">
+</head>
+<body>
+    <div class="div_all" id="div_all">
+        <div class="content">
+            <div class="div_header" id="div_header">
+                <h1 id="well_come">Well Come</h1>
+            </div>
+            <div class="div_header" id="div_header_2">
+                {% block index %} {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

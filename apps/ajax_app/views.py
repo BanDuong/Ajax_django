@@ -12,7 +12,7 @@ class index(ListView):
     def get(self, request, *args, **kwargs):
         products = Product.objects.all()
         context = {"products": products}
-        return render(request, template_name="home/index.html", context=context)
+        return render(request, template_name="pages/index.html", context=context)
 
     def post(self, request):
         pass

@@ -1,13 +1,29 @@
-body{
-    background-color: #d8dec9;
+.div_all{
+    margin-top: 10px;
+    margin-left: 115px;
+    width: 1150px;
+    height: 100%;
+    background-color: #eef0ea;
 }
-.div_header,.div_main{
-    margin: 0 250px;
-    text-align: center;
+#div_header{
     font-size: 20px;
+}
+.div_header{
+    margin-left: 140px;
+    margin-right: 140px;
+    /* margin-top: -27px; */
+    text-align: center;
     color: crimson;
     background-color: aquamarine;
 }
-.div_main{
-    background-color: #eedb8d;
+#div_header_2{
+    /* border: 1px solid black; */
+    margin-top: -27px;
 }
+/* 
+h3{
+    padding: 2px;
+} */
+
+
+
