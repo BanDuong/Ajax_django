@@ -28,6 +28,42 @@ header{
     flex: 1;
     text-align:center;
 }
+.div_filter{
+    background-color:yellowgreen;
+}
+.general_format{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 14.1rem;
+    padding-right: 25rem;
+}
+.into_td_filter{
+    height: 1.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+.tb_content, .tr_content > th, .tr_content > td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+    text-align: center;
+    padding: 5px;
+}
+.tb_content{
+    width: 100%;
+    font-size: 1.2rem;
+}
+.tr_content > th{
+    background-color: #90e7e7;
+}
+td.td_descript{
+    text-align: justify;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+
+
 
 
 

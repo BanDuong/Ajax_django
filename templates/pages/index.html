@@ -1,7 +1,26 @@
 {% extends 'pages/base.html' %}
 
 {% block content %}
-<div class="div_content" id="content">
-{#    <p>vui vui</p>#}
+<div class="div_content general_format" id="content" style="background-color: darkseagreen">
+    <table class="tb_content">
+        <tr class="tr_content">
+            <th>Id</th>
+            <th>User</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Description</th>
+            <th>Image</th>
+        </tr>
+        {% for product in products %}
+        <tr class="tr_content">
+            <td>{{ product.id }}</td>
+            <td>{{ product.user }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.quantity }}</td>
+            <td class="td_descript">{{ product.description }}</td>
+            <td><img src="{{ product.image.url }}" width=100 height=85></td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
 {% endblock %}
