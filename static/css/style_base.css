@@ -43,7 +43,7 @@ header{
     text-align: center;
 }
 .tb_content, .tr_content > th, .tr_content > td{
-    border: 1px solid black;
+    border: 2px solid #78e5cb;
     border-collapse: collapse;
     width: auto;
     text-align: center;
