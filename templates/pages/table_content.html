@@ -1,0 +1,10 @@
+{% for product in products %}
+    <tr class="tr_content">
+        <td>{{ product.id }}</td>
+        <td>{{ product.user }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.quantity }}</td>
+        <td class="td_descript">{{ product.description }}</td>
+        <td><a href="https://www.google.com/"><img src="{{ product.image.url }}" width=100 height=85></a></td>
+    </tr>
+{% endfor %}
