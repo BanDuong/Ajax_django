@@ -17,9 +17,7 @@
                     {% if is_paginated %}
                         {#-------------- previous page  -----------------#}
                         {% if pages.has_previous %}
-                            <a class="bt_pages" id="{{ pages.previous_page_number }}">
-                                <button>&laquo;PRE</button>
-                            </a>
+                            <button class="bt_pages" id="{{ pages.previous_page_number }}">&laquo;PRE</button>
                         {% endif %}
                         {#-------------- page range -----------------#}
                         {% for p in paginator.page_range %}
@@ -27,9 +25,7 @@
                         {% endfor %}
                         {#-------------- next page -----------------#}
                         {% if pages.has_next %}
-                            <a class="bt_pages" id="{{ pages.next_page_number }}">
-                                <button> NEXT &raquo;</button>
-                            </a>
+                            <button class="bt_pages" id="{{ pages.next_page_number }}"> NEXT &raquo;</button>
                         {% endif %}
                     {% endif %}
                 </td>

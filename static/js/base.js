@@ -4,17 +4,21 @@
 $(function(){
 
    $(".bt_pages").click(function(e){
-      let page_id = $(this).attr("id");
+      // let page_id = $(this).attr("id");
+      let current_page_id = document.URL.split("?page=")[1];
       let url = '/apps/ajax_app/index/';
-      // $(`#${id_page}`).attr("href",`?${id_page}`);
+      // let csrfTokenElement = document.querySelector("input[name=csrfmiddlewaretoken]");
+      let csrf_token = document.cookie.split("=")[1];
       let data = {
-         "key": "value",
-         "id": page_id,
+         "current_page_id": current_page_id,
       };
-      // debugger;
+      debugger;
       $.ajax({
          type: "POST",
-         url: `${url}?page=${page_id}`,
+         headers: {
+            "X-CSRFToken": csrf_token
+         },
+         url: `${url}`,
          data: JSON.stringify(data),
          success: function(response){
             console.log("okeeeeeeeeeeeee")
