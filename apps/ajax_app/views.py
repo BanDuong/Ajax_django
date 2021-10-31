@@ -33,7 +33,7 @@ class index(ListView):
         paginator = self.get_paginator(
             self.queryset, page_size, orphans=self.get_paginate_orphans(),
             allow_empty_first_page=self.get_allow_empty())
-        page = 3
+        page = data.get("current_page_id")
         # page = current_page_id
         page_number = int(page) + 1
         page = paginator.page(page_number)

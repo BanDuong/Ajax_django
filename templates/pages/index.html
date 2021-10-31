@@ -12,25 +12,19 @@
                 <th>Image</th>
             </tr>
             {% include "pages/table_content.html" %}
-            <tr class="tr_content">
-                <td colspan="6" style="border: hidden; border-top: 2px solid #78e5cb">
-                    {% if is_paginated %}
-                        {#-------------- previous page  -----------------#}
-                        {% if pages.has_previous %}
-                            <button class="bt_pages" id="{{ pages.previous_page_number }}">&laquo;PRE</button>
-                        {% endif %}
-                        {#-------------- page range -----------------#}
-                        {% for p in paginator.page_range %}
-                            <a href="?page={{ p }}" id="page_{{ p }}">{{ p }}</a>
-                        {% endfor %}
-                        {#-------------- next page -----------------#}
-                        {% if pages.has_next %}
-                            <button class="bt_pages" id="{{ pages.next_page_number }}"> NEXT &raquo;</button>
-                        {% endif %}
-                    {% endif %}
-                </td>
-            </tr>
         </table>
+        <div class="div_paginator">
+            {% if is_paginated %}
+                {#-------------- previous page  -----------------#}
+                    <button class="bt_pages">&laquo;PRE</button>
+                {#-------------- page range -----------------#}
+                {% for p in paginator.page_range %}
+                    <a href="?page={{ p }}" id="page_{{ p }}">{{ p }}</a>
+                {% endfor %}
+                {#-------------- next page -----------------#}
+                    <button class="bt_pages"> NEXT &raquo;</button>
+            {% endif %}
+        </div>
     </div>
 
     <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
