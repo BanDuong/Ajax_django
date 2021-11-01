@@ -4,9 +4,10 @@
 $(function(){
    // paginator page
    $(".bt_pages").click(function(e){
-      let id_next_or_pre = $("tr.main_content").attr("id");
+      let id_next_or_pre = $("tr.main_content").attr("id");    // get current id page
+      $(`#${id_next_or_pre}.bt_pages`).css("background-color", "");    // remove background-color paging
       let bt = $(this).attr("id");
-      if (bt === "previous"){
+      if (bt === "previous"){                            // id next or previous page
          id_next_or_pre = parseInt(id_next_or_pre) - 1;
       }else if (bt === "next"){
          id_next_or_pre = parseInt(id_next_or_pre) + 1;
@@ -29,6 +30,7 @@ $(function(){
          data: JSON.stringify(data),
          dataType: "html",
       }).done(function(response){
+         $(`#${id_next_or_pre}.bt_pages`).css("background-color", "#4bf5e5"); // add background-color paging
          $(".main_content").remove();
          $(".tb_content").append(response);
       }).fail(function(response){

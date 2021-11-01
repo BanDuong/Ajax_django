@@ -3,7 +3,8 @@ html{
     font-size: 14px;
 }
 body{
-    background-color: #c4f1f0;
+    background-color: #eaf3f2;
+    overflow-x: hidden;
 }
 header{
     width: 100%;
@@ -43,7 +44,7 @@ header{
     text-align: center;
 }
 .tb_content, .tr_content > th, .tr_content > td{
-    border: 2px solid #78e5cb;
+    border: 2px solid #e7d832;
     border-collapse: collapse;
     width: auto;
     text-align: center;
@@ -52,9 +53,10 @@ header{
 .tb_content{
     width: 100%;
     font-size: 1.2rem;
+    background-color: rgba(248, 218, 14, 0.2);
 }
 .tr_content > th{
-    background-color: #90e7e7;
+    background-color:rgba(248, 218, 14, 0.5);
 }
 td.td_descript{
     text-align: justify;
@@ -63,6 +65,10 @@ td.td_descript{
 }
 .div_paginator{
     text-align: center;
+    padding-top: 1rem;
+}
+.bt_pages:hover{
+    background-color: #4bf5e5;
 }
 
 

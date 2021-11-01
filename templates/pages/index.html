@@ -1,7 +1,7 @@
 {% extends 'pages/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="div_content general_format" id="content" style="background-color: darkseagreen">
+    <div class="div_content general_format" id="content">
         <table class="tb_content">
             <tr class="tr_content">
                 <th>Id</th>
@@ -26,7 +26,9 @@
             {% endif %}
         </div>
     </div>
-
+ {# ---------------------modal_detail--------------------------- #}
+        {% include "pages/modal_detail.html" %}
     <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/modal_detail.js' %}"></script>
 
 {% endblock %}
