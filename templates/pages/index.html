@@ -16,13 +16,13 @@
         <div class="div_paginator">
             {% if is_paginated %}
                 {#-------------- previous page  -----------------#}
-                    <button class="bt_pages">&laquo;PRE</button>
+                    <button class="bt_pages" id="previous">&laquo;PRE</button>
                 {#-------------- page range -----------------#}
                 {% for p in paginator.page_range %}
-                    <a href="?page={{ p }}" id="page_{{ p }}">{{ p }}</a>
+                    <button class="bt_pages" id="{{ p }}">{{ p }}</button>
                 {% endfor %}
                 {#-------------- next page -----------------#}
-                    <button class="bt_pages"> NEXT &raquo;</button>
+                    <button class="bt_pages" id="next"> NEXT &raquo;</button>
             {% endif %}
         </div>
     </div>

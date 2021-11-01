@@ -29,16 +29,8 @@ class index(ListView):
         template_name = "pages/table_content.html"
         data = json.loads(request.body.decode("utf-8"))
         # current_page_id = data['current_page_id']
-        page_size = self.get_paginate_by(self.queryset)
-        paginator = self.get_paginator(
-            self.queryset, page_size, orphans=self.get_paginate_orphans(),
-            allow_empty_first_page=self.get_allow_empty())
-        page = data.get("current_page_id")
-        # page = current_page_id
-        page_number = int(page) + 1
-        page = paginator.page(page_number)
-        # paginator, page, queryset, is_paginated = self.paginate_queryset(self.queryset, page_size)
 
+        paginator, page = self.Create_paginator(data)
         context = {
             'paginator': paginator,  # show all range pages
             'pages': page,
@@ -46,3 +38,21 @@ class index(ListView):
             'products': page.object_list  # key context transmit to html file
         }
         return render(request=request, template_name=template_name, context=context)
+
+    def check_limit_pages(self, current_page, paginator):
+        if current_page <= 0:
+            current_page = 1
+        elif current_page > paginator.num_pages:
+            current_page = paginator.num_pages
+
+        return current_page
+
+    def Create_paginator(self, data):
+        page_size = self.get_paginate_by(self.queryset)
+        paginator = self.get_paginator(
+            self.queryset, page_size, orphans=self.get_paginate_orphans(),
+            allow_empty_first_page=self.get_allow_empty())
+        page = self.check_limit_pages(data.get("id_next_or_pre"), paginator)
+        page = paginator.page(page)
+
+        return paginator, page
