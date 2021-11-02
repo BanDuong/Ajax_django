@@ -1,11 +1,11 @@
 {% for product in products %}
-    <tr class="tr_content main_content" id="{{ pages.number }}">
-        <td>{{ product.id }}</td>
-        <td>{{ product.user }}</td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.quantity }}</td>
-        <td class="td_descript">{{ product.description }}</td>
-        <td class="tb_images" id="{{ product.id }}"><img src="{{ product.image.url }}" width=100 height=85></td>
+    <tr class="tr_content main_content" id="current-page-{{ pages.number }}">
+        <td class="pr-{{ product.id }}">{{ product.id }}</td>
+        <td class="pr-{{ product.id }}">{{ product.user }}</td>
+        <td class="pr-{{ product.id }}">{{ product.name }}</td>
+        <td class="pr-{{ product.id }}">{{ product.quantity }}</td>
+        <td class="pr-{{ product.id }}" class="td_descript">{{ product.description }}</td>
+        <td id="tb_images" class="pr-{{ product.id }}"><img src="{{ product.image.url }}" width=100 height=85></td>
     </tr>
 {% endfor %}
 

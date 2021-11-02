@@ -52,7 +52,7 @@ class index(ListView):
         paginator = self.get_paginator(
             self.queryset, page_size, orphans=self.get_paginate_orphans(),
             allow_empty_first_page=self.get_allow_empty())
-        page = self.check_limit_pages(data.get("id_next_or_pre"), paginator)
+        page = data.get("id_next_or_pre")
         page = paginator.page(page)
 
         return paginator, page

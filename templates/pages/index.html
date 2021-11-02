@@ -3,15 +3,19 @@
 {% block content %}
     <div class="div_content general_format" id="content">
         <table class="tb_content">
-            <tr class="tr_content">
-                <th>Id</th>
-                <th>User</th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Description</th>
-                <th>Image</th>
-            </tr>
-            {% include "pages/table_content.html" %}
+            <thead>
+                <tr class="tr_content">
+                    <th>Id</th>
+                    <th>User</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody class="tb-body">
+                {% include "pages/table_content.html" %}
+            </tbody>
         </table>
         <div class="div_paginator">
             {% if is_paginated %}
@@ -19,10 +23,10 @@
                     <button class="bt_pages" id="previous">&laquo;PRE</button>
                 {#-------------- page range -----------------#}
                 {% for p in paginator.page_range %}
-                    <button class="bt_pages" id="{{ p }}">{{ p }}</button>
+                    <button class="bt_pages" id="page-range-{{ p }}">{{ p }}</button>
                 {% endfor %}
                 {#-------------- next page -----------------#}
-                    <button class="bt_pages" id="next"> NEXT &raquo;</button>
+                    <button class="bt_pages" id="next" name="{{ paginator.num_pages }}"> NEXT &raquo;</button>
             {% endif %}
         </div>
     </div>
