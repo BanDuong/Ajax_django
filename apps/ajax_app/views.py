@@ -39,13 +39,6 @@ class index(ListView):
         }
         return render(request=request, template_name=template_name, context=context)
 
-    def check_limit_pages(self, current_page, paginator):
-        if current_page <= 0:
-            current_page = 1
-        elif current_page > paginator.num_pages:
-            current_page = paginator.num_pages
-
-        return current_page
 
     def Create_paginator(self, data):
         page_size = self.get_paginate_by(self.queryset)

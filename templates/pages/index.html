@@ -1,5 +1,8 @@
 {% extends 'pages/base.html' %}
 {% load static %}
+{% block value_hidden %}
+{#    <input id="all_query" hidden name="{{ paginator.object_list }}">#}
+{% endblock %}
 {% block content %}
     <div class="div_content general_format" id="content">
         <table class="tb_content">

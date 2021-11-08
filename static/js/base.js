@@ -1,7 +1,7 @@
 
 // import hello from "static/js/index.js"
 
-$(function(){
+$(document).ready(function(){
    // paginator page
    let max_pages = $("#next").attr("name");
    $(`#page-range-1`).css("background-color", "#4bf5e5"); // add background-color paging start
